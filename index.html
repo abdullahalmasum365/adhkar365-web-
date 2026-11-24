@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AAM365 SOFTWARE — Official Company & Adhkar 365</title>
+  <meta name="description" content="AAM365 SOFTWARE is an independent mobile engineering studio based in Bangladesh, creators of Adhkar 365 — a modern, privacy-first, 100% free Islamic app.">
+  <meta name="keywords" content="AAM365 SOFTWARE, Adhkar 365, Islamic app, daily dhikr, prayer times, qibla compass, privacy-first mobile apps, Abdullah Al Masum">
+  <meta name="author" content="Abdullah Al Masum">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-dark: #071714;
+      --primary-green: #0D2924;
+      --primary-emerald: #144038;
+      --accent-gold: #E5B232;
+      --accent-gold-light: #FDE68A;
+      --accent-gold-glow: rgba(229, 178, 50, 0.25);
+      --bg-cream: #F8F9F8;
+      --surface-white: #FFFFFF;
+      --text-main: #111827;
+      --text-muted: #4B5563;
+      --text-light: #9CA3AF;
+      --border-color: #E5E7EB;
+      --border-dark: rgba(255, 255, 255, 0.1);
+      --card-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05), 0 4px 12px -2px rgba(0, 0, 0, 0.03);
+      --glow-shadow: 0 0 50px rgba(229, 178, 50, 0.15);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-cream);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Top Announcement Bar */
+    .announcement-bar {
+      background: var(--primary-dark);
+      color: var(--accent-gold-light);
+      padding: 10px 20px;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    .announcement-bar span.badge-pill {
+      background: rgba(229, 178, 50, 0.2);
+      color: var(--accent-gold);
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      margin-right: 8px;
+      text-transform: uppercase;
+    }
+
+    /* Navigation */
+    nav {
+      background: rgba(13, 41, 36, 0.96);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #FFFFFF;
+    }
+
+    .site-logo {
+      height: 42px;
+      width: auto;
+      max-width: 190px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .footer-logo {
+      height: 40px;
+      width: auto;
+      max-width: 180px;
+      object-fit: contain;
+      display: block;
+    }
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #E2E8F0;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-gold);
+    }
+
+    .nav-cta {
+      background: linear-gradient(135deg, var(--accent-gold) 0%, #D4AF37 100%);
+      color: var(--primary-dark) !important;
+      padding: 9px 20px;
+      border-radius: 8px;
+      font-weight: 700 !important;
+      box-shadow: 0 4px 14px rgba(229, 178, 50, 0.25);
+      transition: all 0.2s ease !important;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(229, 178, 50, 0.35);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(180deg, var(--primary-dark) 0%, var(--primary-green) 50%, var(--primary-emerald) 100%);
+      color: #FFFFFF;
+      padding: 90px 24px 120px;
+      position: relative;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -150px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(229, 178, 50, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-container {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(229, 178, 50, 0.15);
+      border: 1px solid rgba(229, 178, 50, 0.35);
+      color: var(--accent-gold);
+      padding: 6px 18px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 24px;
+      letter-spacing: 0.5px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      line-height: 1.15;
+      font-weight: 800;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
+
+    .hero h1 span.gold {
+      background: linear-gradient(135deg, #FFF6D6 0%, var(--accent-gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .arabic-salawat {
+      font-family: 'Amiri', serif;
+      font-size: 26px;
+      color: var(--accent-gold);
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #CBD5E1;
+      max-width: 700px;
+      margin: 0 auto 36px;
+      line-height: 1.6;
+    }
+
+    .hero-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, var(--accent-gold) 0%, #D4AF37 100%);
+      color: var(--primary-dark);
+      box-shadow: 0 4px 18px rgba(229, 178, 50, 0.3);
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(229, 178, 50, 0.4);
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.08);
+      color: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: #FFFFFF;
+    }
+
+    /* Key Metrics Banner */
+    .metrics-bar {
+      max-width: 1100px;
+      margin: -60px auto 70px;
+      background: var(--surface-white);
+      border-radius: 16px;
+      padding: 32px 40px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      border: 1px solid var(--border-color);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .metric-item {
+      text-align: center;
+      border-right: 1px solid var(--border-color);
+    }
+
+    .metric-item:last-child {
+      border-right: none;
+    }
+
+    .metric-number {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--primary-green);
+      margin-bottom: 4px;
+    }
+
+    .metric-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Section Global Styles */
+    section {
+      padding: 80px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .section-tag {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 800;
+      color: #B8860B;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--primary-dark);
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+
+    .section-desc {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    /* Grid Layouts */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--surface-white);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: var(--card-shadow);
+      transition: all 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(13, 41, 36, 0.08);
+      border-color: #CBD5E1;
+    }
+
+    .card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: #F0FDF4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: var(--primary-emerald);
+      border: 1px solid #DCFCE7;
+    }
+
+    .card h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 14.5px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* App Showcase Feature Section */
+    .app-feature-box {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-green) 100%);
+      border-radius: 24px;
+      padding: 56px;
+      color: #FFFFFF;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 48px;
+      align-items: center;
+      box-shadow: 0 20px 50px rgba(7, 23, 20, 0.2);
+      margin-bottom: 80px;
+    }
+
+    .app-feature-content h2 {
+      font-size: 34px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: #FFFFFF;
+    }
+
+    .app-feature-content p {
+      font-size: 16px;
+      color: #CBD5E1;
+      margin-bottom: 28px;
+    }
+
+    .feature-checklist {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px 20px;
+      margin-bottom: 32px;
+    }
+
+    .feature-checklist li {
+      font-size: 14px;
+      color: #E2E8F0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .feature-checklist li span.check {
+      color: var(--accent-gold);
+      font-weight: 800;
+    }
+
+    .app-mockup-frame {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 28px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .mockup-inner {
+      background: #091F1B;
+      border: 2px solid rgba(229, 178, 50, 0.3);
+      border-radius: 14px;
+      padding: 24px;
+    }
+
+    .mockup-arabic {
+      font-family: 'Amiri', serif;
+      font-size: 26px;
+      color: var(--accent-gold-light);
+      margin-bottom: 12px;
+    }
+
+    .mockup-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 6px;
+    }
+
+    .mockup-sub {
+      font-size: 13px;
+      color: #94A3B8;
+    }
+
+    /* Entity Verification & Transparency Box (Crucial for Google Play) */
+    .verification-card {
+      background: #FFFFFF;
+      border: 2px solid #E2E8F0;
+      border-top: 5px solid var(--accent-gold);
+      border-radius: 18px;
+      padding: 40px;
+      box-shadow: var(--card-shadow);
+      margin-bottom: 60px;
+    }
+
+    .verification-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border-color);
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .verification-header h3 {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .status-badge {
+      background: #ECFDF5;
+      color: #065F46;
+      border: 1px solid #A7F3D0;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .details-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .details-table tr {
+      border-bottom: 1px solid #F1F5F9;
+    }
+
+    .details-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .details-table th {
+      text-align: left;
+      padding: 14px 16px 14px 0;
+      font-size: 14px;
+      color: var(--text-muted);
+      width: 32%;
+      font-weight: 600;
+    }
+
+    .details-table td {
+      padding: 14px 0;
+      font-size: 14.5px;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .code-pill {
+      font-family: monospace;
+      background: #F1F5F9;
+      color: #0F172A;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 13.5px;
+      border: 1px solid #E2E8F0;
+    }
+
+    /* Policies Links Grid */
+    .policy-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 36px;
+    }
+
+    .policy-item {
+      background: var(--surface-white);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 24px;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .policy-item:hover {
+      border-color: var(--accent-gold);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(13, 41, 36, 0.07);
+    }
+
+    .policy-item h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--primary-green);
+      margin-bottom: 8px;
+    }
+
+    .policy-item p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    .policy-link-text {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary-emerald);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--primary-dark);
+      color: #94A3B8;
+      padding: 70px 24px 30px;
+      border-top: 1px solid var(--border-dark);
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    .footer-col h4 {
+      color: #FFFFFF;
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 12px;
+    }
+
+    .footer-col ul a {
+      color: #94A3B8;
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s ease;
+    }
+
+    .footer-col ul a:hover {
+      color: var(--accent-gold);
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .metrics-bar { grid-template-columns: repeat(2, 1fr); }
+      .metrics-bar .metric-item:nth-child(2) { border-right: none; }
+      .metrics-bar .metric-item { margin-bottom: 16px; }
+      .grid-3 { grid-template-columns: 1fr 1fr; }
+      .app-feature-box { grid-template-columns: 1fr; }
+      .policy-grid { grid-template-columns: 1fr 1fr; }
+      .footer-container { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 34px; }
+      .metrics-bar { grid-template-columns: 1fr; gap: 20px; padding: 24px; }
+      .metrics-bar .metric-item { border-right: none; border-bottom: 1px solid var(--border-color); padding-bottom: 16px; }
+      .metrics-bar .metric-item:last-child { border-bottom: none; }
+      .grid-3, .grid-2, .policy-grid { grid-template-columns: 1fr; }
+      .app-feature-box { padding: 32px 24px; }
+      .feature-checklist { grid-template-columns: 1fr; }
+      .footer-container { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Global Announcement -->
+  <div class="announcement-bar">
+    <span class="badge-pill">Official Portal</span>
+    AAM365 SOFTWARE — Verified Independent Mobile Engineering & Islamic Digital Utilities.
+  </div>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <a href="#" class="brand-logo" aria-label="aam365 SOFTWARE Home">
+        <img src="images/logo-white.png" alt="aam365 SOFTWARE" class="site-logo">
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About Studio</a></li>
+        <li><a href="#adhkar365">Adhkar 365</a></li>
+        <li><a href="#transparency">Entity Verification</a></li>
+        <li><a href="#policies">Policies</a></li>
+        <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-container">
+      <div class="hero-badge">🛡️ 100% Free • Ad-Free • Privacy-First by Design</div>
+      <div class="arabic-salawat">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+      <h1>Purposeful Digital Companions for the <span class="gold">Global Ummah</span></h1>
+      <p>
+        <strong>AAM365 SOFTWARE</strong> is an independent software studio founded by Abdullah Al Masum in Bangladesh. 
+        We specialize in developing authentic, beautiful, and distraction-free mobile applications that respect user privacy and honor Islamic values.
+      </p>
+      <div class="hero-buttons">
+        <a href="#adhkar365" class="btn btn-gold">
+          <span>Explore Adhkar 365</span> →
+        </a>
+        <a href="#transparency" class="btn btn-outline">
+          <span>Corporate Verification</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Key Metrics Banner -->
+  <div class="metrics-bar">
+    <div class="metric-item">
+      <div class="metric-number">100%</div>
+      <div class="metric-label">Ad-Free Forever</div>
+    </div>
+    <div class="metric-item">
+      <div class="metric-number">19</div>
+      <div class="metric-label">Global Languages</div>
+    </div>
+    <div class="metric-item">
+      <div class="metric-number">120+</div>
+      <div class="metric-label">Prophetic Supplications</div>
+    </div>
+    <div class="metric-item">
+      <div class="metric-number">0%</div>
+      <div class="metric-label">Data Selling / Tracking</div>
+    </div>
+  </div>
+
+  <!-- About Company Section -->
+  <section id="about">
+    <div class="section-header">
+      <div class="section-tag">About Our Studio</div>
+      <h2 class="section-title">Engineering With Spiritual Purpose</h2>
+      <p class="section-desc">
+        We believe that spiritual remembrance and prayer timekeeping should never be interrupted by flashing ads, trackers, or commercial clutter.
+      </p>
+    </div>
+
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-icon">📿</div>
+        <h3>Authentic Islamic Tradition</h3>
+        <p>Every supplication and hadith in our apps is thoroughly cross-referenced with authentic compilations including <em>Hisn al-Muslim</em> (Fortress of the Muslim) with verified diacritics and translations.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🔒</div>
+        <h3>Privacy-First Architecture</h3>
+        <p>Your spiritual journey is personal. Our apps function 100% offline by default without requiring any mandatory account creation or tracking your exact location.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">⚡</div>
+        <h3>High-Performance Code</h3>
+        <p>Built with modern Flutter and Dart frameworks for battery-efficient prayer calculations, buttery-smooth 60fps haptic tasbeeh counters, and lightweight downloads.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flagship App Section: Adhkar 365 -->
+  <section id="adhkar365">
+    <div class="app-feature-box">
+      <div class="app-feature-content">
+        <div class="hero-badge" style="margin-bottom: 12px; background: rgba(229,178,50,0.1);">Flagship Application</div>
+        <h2>Adhkar 365 (أذكار ٣٦٥)</h2>
+        <p>
+          Your daily spiritual companion for authentic prophetic supplications, high-precision prayer times, dynamic Qibla compass navigation, and mindful habit tracking.
+        </p>
+        <ul class="feature-checklist">
+          <li><span class="check">✓</span> 120+ Prophetic Adhkar & Duas</li>
+          <li><span class="check">✓</span> Precision Solar Prayer Calculations</li>
+          <li><span class="check">✓</span> Haptic Sensor-Fused Qibla Compass</li>
+          <li><span class="check">✓</span> Offline Audio Recitations</li>
+          <li><span class="check">✓</span> Contemplative Mode (Huḍūr)</li>
+          <li><span class="check">✓</span> 19 Global Language Translations</li>
+          <li><span class="check">✓</span> Customizable Daily Dua Plans</li>
+          <li><span class="check">✓</span> Zero Third-Party Advertising</li>
+        </ul>
+        <div>
+          <a href="#policies" class="btn btn-gold">View App Policies & Docs</a>
+        </div>
+      </div>
+
+      <div class="app-mockup-frame">
+        <div class="mockup-inner">
+          <div class="mockup-arabic">أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ</div>
+          <div class="mockup-title">Adhkar 365 v1.0</div>
+          <div class="mockup-sub">"Unquestionably, by the remembrance of Allah hearts are assured."</div>
+          <div style="margin-top: 20px; font-size: 12px; color: var(--accent-gold); font-weight: 700; text-transform: uppercase;">
+            Package: com.adhkaar365.app
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Legal & Corporate Verification Section (CRITICAL FOR GOOGLE PLAY CONSOLE) -->
+  <section id="transparency">
+    <div class="section-header">
+      <div class="section-tag">Corporate Transparency</div>
+      <h2 class="section-title">Official Entity Verification</h2>
+      <p class="section-desc">
+        AAM365 SOFTWARE is an officially registered business entity in Bangladesh, verified globally through Dun & Bradstreet for Google Play.
+      </p>
+    </div>
+
+    <div class="verification-card">
+      <div class="verification-header">
+        <h3>🏛️ Legal Entity & Registration Profile</h3>
+        <span class="status-badge">✓ Active & D&B Verified</span>
+      </div>
+
+      <table class="details-table">
+        <tbody>
+          <tr>
+            <th>Legally Registered Name</th>
+            <td>
+              <div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap;">
+                <img src="images/logo-dark.png" alt="aam365 SOFTWARE" style="height: 28px; width: auto; object-fit: contain;">
+                <span><strong>AAM365 SOFTWARE</strong></span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th>Commercial D-U-N-S® Number</th>
+            <td><span class="code-pill">732332606</span> (Dun & Bradstreet Global Registry)</td>
+          </tr>
+          <tr>
+            <th>Trade License / Reg. Number</th>
+            <td><span class="code-pill">389994837758</span></td>
+          </tr>
+          <tr>
+            <th>Registration Authority</th>
+            <td>Local Government Division, Sonatala Union Parishad, Bangladesh</td>
+          </tr>
+          <tr>
+            <th>Legal Business Structure</th>
+            <td>Sole Proprietorship (Software & IT Online Services)</td>
+          </tr>
+          <tr>
+            <th>Proprietor & Lead Developer</th>
+            <td>Abdullah Al Masum</td>
+          </tr>
+          <tr>
+            <th>Registered Physical Address</th>
+            <td>Namajkhali, Horikhali (Postal Code: 5826), Sonatala, Bogura, Rajshahi, Bangladesh</td>
+          </tr>
+          <tr>
+            <th>Official Contact Email</th>
+            <td><a href="mailto:abdullahalmasum365@gmail.com" style="color: var(--primary-emerald); text-decoration: none; font-weight: 700;">abdullahalmasum365@gmail.com</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Legal Policies Section -->
+  <section id="policies">
+    <div class="section-header">
+      <div class="section-tag">Legal & Governance</div>
+      <h2 class="section-title">Privacy, Terms & Consumer Rights</h2>
+      <p class="section-desc">
+        We uphold rigorous compliance with Google Play Developer Program Policies and global data privacy standards.
+      </p>
+    </div>
+
+    <div class="policy-grid">
+      <a href="privacy-policy.html" class="policy-item">
+        <div>
+          <h4>🛡️ Privacy Policy</h4>
+          <p>Detailed breakdown of local data storage, sensor permissions, and our zero-tracking guarantee.</p>
+        </div>
+        <span class="policy-link-text">Read Policy →</span>
+      </a>
+
+      <a href="terms-of-service.html" class="policy-item">
+        <div>
+          <h4>📜 Terms of Service</h4>
+          <p>Terms of usage, intellectual property guidelines, authentic sources, and voluntary maintenance support.</p>
+        </div>
+        <span class="policy-link-text">Read Terms →</span>
+      </a>
+
+      <a href="refund-policy.html" class="policy-item">
+        <div>
+          <h4>💳 Refund & Support Policy</h4>
+          <p>Google Play in-app billing guidelines, optional voluntary patron tiers, and cancellation terms.</p>
+        </div>
+        <span class="policy-link-text">Read Refund Policy →</span>
+      </a>
+
+      <a href="delete-account.html" class="policy-item">
+        <div>
+          <h4>🗑️ Account & Data Deletion</h4>
+          <p>Instant in-app self-service account deletion and web-based data deletion request mechanisms.</p>
+        </div>
+        <span class="policy-link-text">Manage Data →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="section-header">
+      <div class="section-tag">Inquiries & Support</div>
+      <h2 class="section-title">Get in Touch</h2>
+      <p class="section-desc">
+        Have questions, feedback, hadith verification inquiries, or partnership proposals? We are here to help.
+      </p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card" style="border-left: 4px solid var(--primary-emerald);">
+        <div class="card-icon">✉️</div>
+        <h3>Developer & Support Inquiries</h3>
+        <p style="margin-bottom: 12px;">For app support, technical issues, or hadith citation verification:</p>
+        <p><strong>Email:</strong> <a href="mailto:abdullahalmasum365@gmail.com" style="color: var(--primary-emerald); text-decoration: none;">abdullahalmasum365@gmail.com</a></p>
+        <p style="font-size: 13px; color: var(--text-light); margin-top: 8px;">Typical response time: Within 24–48 hours.</p>
+      </div>
+
+      <div class="card" style="border-left: 4px solid var(--accent-gold);">
+        <div class="card-icon">🏢</div>
+        <h3>Corporate Headquarters</h3>
+        <p style="margin-bottom: 8px;"><strong>AAM365 SOFTWARE</strong></p>
+        <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">
+          Namajkhali, Horikhali (Postal Code: 5826),<br>
+          Sonatala Upazilla, Bogura District,<br>
+          Rajshahi Division, Bangladesh.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <div style="margin-bottom: 20px;">
+          <img src="images/logo-white.png" alt="aam365 SOFTWARE" class="footer-logo">
+        </div>
+        <p style="font-size: 13.5px; line-height: 1.6; color: #94A3B8;">
+          Independent mobile engineering studio dedicated to crafting authentic, respectful, and distraction-free Islamic digital utilities for Muslims worldwide.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Flagship App</h4>
+        <ul>
+          <li><a href="#adhkar365">Adhkar 365 Overview</a></li>
+          <li><a href="#about">Prayer Times & Qibla</a></li>
+          <li><a href="#about">120+ Prophetic Duas</a></li>
+          <li><a href="#about">Huḍūr Contemplative Mode</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Legal & Privacy</h4>
+        <ul>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-of-service.html">Terms of Service</a></li>
+          <li><a href="refund-policy.html">Voluntary Support & Refunds</a></li>
+          <li><a href="delete-account.html">Account & Data Deletion</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Business Verification</h4>
+        <ul>
+          <li><a href="#transparency">D-U-N-S: 732332606</a></li>
+          <li><a href="#transparency">Trade License: 389994837758</a></li>
+          <li><a href="#contact">Developer Support</a></li>
+          <li><a href="mailto:abdullahalmasum365@gmail.com">Security & DMCA Notices</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>
+        &copy; 2026 <strong>AAM365 SOFTWARE</strong>. All Rights Reserved. Built for the Muslim Ummah.
+      </div>
+      <div>
+        D-U-N-S® 732332606 • Trade License 389994837758 • Sonatala, Bogura, Bangladesh
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

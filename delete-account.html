@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account & Data Deletion — Adhkar 365</title>
+  <style>
+    :root {
+      --primary: #0F766E;
+      --primary-dark: #115E59;
+      --bg: #F8FAFC;
+      --card: #FFFFFF;
+      --text: #0F172A;
+      --text-muted: #64748B;
+      --border: #E2E8F0;
+      --danger: #DC2626;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 24px 16px;
+    }
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px 24px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+    .badge {
+      display: inline-block;
+      background: #CCFBF1;
+      color: var(--primary-dark);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    h1 {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    p.lead {
+      color: var(--text-muted);
+      font-size: 15px;
+      margin-bottom: 24px;
+    }
+    h2 {
+      font-size: 18px;
+      font-weight: 700;
+      margin: 28px 0 12px 0;
+      color: var(--primary-dark);
+    }
+    .method-card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #F8FAFC;
+    }
+    .method-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    ol, ul {
+      padding-left: 20px;
+      color: var(--text);
+      font-size: 14.5px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: #FFFFFF;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      margin-top: 12px;
+      transition: background 0.2s;
+    }
+    .btn:hover {
+      background: var(--primary-dark);
+    }
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+    .info-table th, .info-table td {
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      text-align: left;
+    }
+    .info-table th {
+      background: #F1F5F9;
+      font-weight: 700;
+    }
+    footer {
+      text-align: center;
+      margin-top: 32px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <span class="badge">Google Play Compliance</span>
+  <h1>Account & Data Deletion</h1>
+  <p class="lead">
+    In accordance with Google Play's Account Deletion Policy, this page allows users of <strong>Adhkar 365</strong> to permanently delete their account and all associated cloud data.
+  </p>
+
+  <h2>Option 1: Instant In-App Deletion (Fastest)</h2>
+  <div class="method-card">
+    <div class="method-title">📱 From the Adhkar 365 Mobile App</div>
+    <ol>
+      <li>Open the <strong>Adhkar 365</strong> app on your device.</li>
+      <li>Tap the <strong>Settings</strong> tab in the bottom navigation bar.</li>
+      <li>Select <strong>Account &amp; Sync</strong>.</li>
+      <li>Scroll to the bottom and tap <strong>"Delete Account"</strong>.</li>
+      <li>Confirm your choice. Your profile, authentication credentials, and all synchronized cloud data are permanently and instantly deleted from Google Firebase servers.</li>
+    </ol>
+  </div>
+
+  <h2>Option 2: Web / Email Deletion Request (Without Reinstalling)</h2>
+  <div class="method-card">
+    <div class="method-title">✉️ If you uninstalled the app or lost device access</div>
+    <p style="font-size: 14.5px; margin-bottom: 12px;">
+      You do not need to reinstall the app to request data deletion. Send an email to our support team with the subject <code>Adhkar 365 Account Deletion Request</code> from or mentioning your registered email address.
+    </p>
+    <a class="btn" href="mailto:abdullahalmasum365@gmail.com?subject=Adhkar%20365%20Account%20Deletion%20Request&body=Please%20permanently%20delete%20my%20Adhkar%20365%20account%20and%20all%20associated%20cloud%20data.%0A%0AMy%20Registered%20Email:%20">
+      Request Account Deletion via Email
+    </a>
+  </div>
+
+  <h2>What Data Is Deleted vs Retained?</h2>
+  <table class="info-table">
+    <thead>
+      <tr>
+        <th>Data Type</th>
+        <th>Action</th>
+        <th>Retention Period</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Authentication Profile</strong> (Name, Email, Firebase UID)</td>
+        <td>Permanently Deleted</td>
+        <td>Instant in-app, or within 7 days via email</td>
+      </tr>
+      <tr>
+        <td><strong>Cloud Synced Data</strong> (Bookmarks, Custom Plan, Streaks)</td>
+        <td>Permanently Deleted</td>
+        <td>Instant in-app, or within 7 days via email</td>
+      </tr>
+      <tr>
+        <td><strong>FCM Push Tokens</strong></td>
+        <td>Permanently Deleted</td>
+        <td>Instant</td>
+      </tr>
+      <tr>
+        <td><strong>Offline Local App Data</strong> (Daily counters on device)</td>
+        <td>Stored locally on device only</td>
+        <td>Cleared automatically when app is uninstalled</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <footer>
+    <p>Developer &amp; Legal Entity: <strong>AAM365 SOFTWARE</strong> (Abdullah Al Masum)</p>
+    <p>Registered Office: Namajkhali, Horikhali (5826), Sonatala, Bogura, Bangladesh</p>
+    <p><a href="privacy-policy.html">Back to Privacy Policy</a> • <a href="index.html">Official Website</a></p>
+  </footer>
+</div>
+
+</body>
+</html>
