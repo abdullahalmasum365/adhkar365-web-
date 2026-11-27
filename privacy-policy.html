@@ -56,10 +56,11 @@
   <a href="terms-of-service.html">Terms of Service</a>
   <a href="refund-policy.html">Refund Policy</a>
   <a href="cookie-policy.html">Cookie Policy</a>
+  <a href="delete-account.html">Account Deletion</a>
 </div>
 
 <h1>Privacy Policy</h1>
-<p class="updated">Adhkar 365 — Last updated: November 26, 2026</p>
+<p class="updated">Adhkar 365 — Last updated: November 27, 2026</p>
 
 <div class="highlight-box">
   <strong>Privacy First Commitment:</strong> <strong>Adhkar 365</strong> is designed with privacy at its core. 
@@ -84,7 +85,7 @@
   <li><strong>Local Processing:</strong> All mathematical prayer calculations occur <strong>locally on your device</strong>. Your coordinates are never uploaded to our servers, never stored remotely, and never sold or shared with any commercial parties.</li>
   <li><strong>Offline World City Database:</strong> The app bundles a pre-compiled offline database of over 34,000 cities worldwide (GeoNames cities15000, licensed CC-BY 4.0). You can select your city manually without granting GPS permission or requiring an internet connection.</li>
   <li><strong>Native Reverse Geocoding (Google Play Services):</strong> When you tap the auto-detect GPS location button, your device's native platform geocoder (Google Play Services on Android) is invoked locally to convert your coordinates into a city/country name for display. This lookup is handled by your operating system and subject to Google's privacy policy. Our app servers never receive or store these coordinates.</li>
-  <li><strong>Online Small Town Search Fallback (OpenStreetMap Nominatim):</strong> If you search for an uncommon small town not found in the bundled offline database, the app makes an HTTPS geocoding request to <code>nominatim.openstreetmap.org</code> (operated by the OpenStreetMap Foundation) to resolve the town name into geographic coordinates. In accordance with Nominatim's strict Usage Policy, requests transmit our verified contact User-Agent: <code>Adhkar365App/1.0 (https://abdullahalmasum365.github.io/adhkar365-web-/; abdullahalmasum365@gmail.com)</code>. Only the user-typed search string is transmitted; your real-time GPS coordinates, user account, and device identifiers are NEVER transmitted to Nominatim. The OpenStreetMap Foundation Privacy Policy applies to these geocoding queries.</li>
+  <li><strong>Online Small Town Search Fallback (OpenStreetMap Nominatim):</strong> If you search for an uncommon small town not found in the bundled offline database, the app makes an HTTPS geocoding request to <code>nominatim.openstreetmap.org</code> (operated by the OpenStreetMap Foundation) to resolve the town name into geographic coordinates. In accordance with Nominatim's strict Usage Policy, requests transmit our verified contact User-Agent: <code>Adhkar365App/1.0 (https://abdullahalmasum365.github.io/adhkar365-web-/; aam365support@gmail.com)</code>. Only the user-typed search string is transmitted; your real-time GPS coordinates, user account, and device identifiers are NEVER transmitted to Nominatim. The OpenStreetMap Foundation Privacy Policy applies to these geocoding queries.</li>
 </ul>
 
 <h3>1.2 Local &amp; Push Notifications, Exact Alarms &amp; Battery Settings</h3>
@@ -121,7 +122,13 @@
   <li><strong>Strict Offline Policy:</strong> Runtime remote font fetching is strictly disabled in application code (<code>allowRuntimeFetching = false</code>). The font engine does not make network requests to Google Fonts CDN (<code>fonts.gstatic.com</code>) and does not transmit IP addresses during font rendering.</li>
 </ul>
 
-<h3>1.6 Data We Do NOT Collect</h3>
+<h3>1.6 Android Home Screen Widgets &amp; Device Text-to-Speech (TTS)</h3>
+<ul>
+  <li><strong>Home Screen Widgets:</strong> Adhkar 365 provides optional Android home screen widgets (Prayer Countdown, Daily Adhkar Tracker, Dua of the Day, and Quick Tasbih). Widget updates read locally stored prayer schedules, counts, and theme preferences directly from on-device storage (<code>SharedPreferences</code>). Widgets never run location tracking or send analytics or personal data to external servers.</li>
+  <li><strong>On-Device Text-to-Speech (TTS):</strong> Optional spoken recitation/reading assistance uses your device's built-in operating system TTS engine locally without uploading user queries to our servers.</li>
+</ul>
+
+<h3>1.7 Data We Do NOT Collect</h3>
 <ul>
   <li><strong>No Advertising IDs:</strong> We do NOT collect Google Advertising ID (GAID).</li>
   <li><strong>No Cookies or Tracking Pixels:</strong> We do not use web cookies, flash cookies, or tracking beacons in the mobile application. (See our <a href="cookie-policy.html">Cookie Policy</a>).</li>
@@ -191,10 +198,16 @@
       <td>Local coordinates (processed on device only)</td>
     </tr>
     <tr>
-      <td><strong>Flutter Local Notifications</strong></td>
-      <td>Dexterous (Open Source)</td>
-      <td>Schedules local prayer and adhkar reminders</td>
+      <td><strong>Flutter Local Notifications &amp; WorkManager</strong></td>
+      <td>Dexterous / Android Jetpack (Open Source)</td>
+      <td>Schedules local prayer and adhkar reminders and refreshes schedules offline every 12 hours</td>
       <td>Local alarm triggers (processed on device only)</td>
+    </tr>
+    <tr>
+      <td><strong>HomeWidget &amp; Device TTS</strong></td>
+      <td>Open Source / OS Native Engine</td>
+      <td>Renders optional Android home screen widgets and optional local speech playback</td>
+      <td>Local <code>SharedPreferences</code> widget state (on device only)</td>
     </tr>
   </tbody>
 </table>
@@ -233,7 +246,7 @@
   <p>
     If you uninstalled the App or cannot access your device, submit a data deletion request directly via our dedicated <a href="delete-account.html"><strong>Account &amp; Data Deletion Page</strong></a> or by emailing:
   </p>
-  <p><strong>Email:</strong> <a href="mailto:abdullahalmasum365@gmail.com?subject=Adhkar%20365%20Account%20Deletion%20Request">abdullahalmasum365@gmail.com</a></p>
+  <p><strong>Email:</strong> <a href="mailto:aam365support@gmail.com?subject=Adhkar%20365%20Account%20Deletion%20Request">aam365support@gmail.com</a></p>
   <p><strong>Subject:</strong> <code>Adhkar 365 Account Deletion Request</code></p>
   <p>Include the email address associated with your account. We will permanently delete all your data within 7 business days and confirm by email.</p>
 </div>
@@ -247,7 +260,7 @@
 <ul>
   <li><strong>Sacred Texts &amp; Du'as:</strong> The prophetic supplications and Qur'anic verses contained in the App are derived from authentic classical Islamic compilations (including <em>Hisn al-Muslim</em>) and constitute shared Islamic cultural and religious heritage.</li>
   <li><strong>Audio Recitations:</strong> Audio supplications and Qur'anic verses are provided for devotional, pronunciation, and educational guidance. All audio files, supplications, custom routines, palettes, and features are completely free and open to everyone with no gated content. Voluntary support exists solely to support independent app maintenance and development and provides digital patron recognition (Muhsin profile badge and Du'a Dedication Certificate) while keeping all core religious content 100% free for everyone.</li>
-  <li><strong>Notice to Rights Holders &amp; DMCA Takedown Policy:</strong> We respect intellectual property and creative rights. If you are a reciter, content creator, or copyright holder (or an authorized representative) and believe that any audio recording included in this application has been incorporated without proper authorization, or if you request attribution or immediate removal, please contact us at <a href="mailto:abdullahalmasum365@gmail.com?subject=Audio%20Copyright%20Notice">abdullahalmasum365@gmail.com</a> with the relevant details. We are committed to responding promptly and will remove or replace the specified audio file within 48 to 72 hours.</li>
+  <li><strong>Notice to Rights Holders &amp; DMCA Takedown Policy:</strong> We respect intellectual property and creative rights. If you are a reciter, content creator, or copyright holder (or an authorized representative) and believe that any audio recording included in this application has been incorporated without proper authorization, or if you request attribution or immediate removal, please contact us at <a href="mailto:aam365support@gmail.com?subject=Audio%20Copyright%20Notice">aam365support@gmail.com</a> with the relevant details. We are committed to responding promptly and will remove or replace the specified audio file within 48 to 72 hours.</li>
   <li><strong>Typography:</strong> All typography utilized in the application (including Amiri, Space Mono, Manrope, Public Sans, and Noto Serif) is licensed under the <strong>SIL Open Font License (OFL) 1.1</strong>.</li>
 </ul>
 
@@ -337,7 +350,7 @@
   <p><strong>Registered Address:</strong> Namajkhali, Horikhali (5826), Sonatala, Bogura, Rajshahi, Bangladesh</p>
   <p><strong>Application:</strong> Adhkar 365 (Package: <code>com.adhkaar365.app</code>)</p>
   <p><strong>Country of Operation:</strong> Bangladesh</p>
-  <p><strong>Support &amp; Privacy Inquiries:</strong> <a href="mailto:abdullahalmasum365@gmail.com">abdullahalmasum365@gmail.com</a></p>
+  <p><strong>Support &amp; Privacy Inquiries:</strong> <a href="mailto:aam365support@gmail.com">aam365support@gmail.com</a></p>
   <p><strong>Official Website:</strong> <a href="https://abdullahalmasum365.github.io/adhkar365-web-/" target="_blank" rel="noopener">abdullahalmasum365.github.io/adhkar365-web-</a></p>
 </div>
 
